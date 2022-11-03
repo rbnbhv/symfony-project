@@ -5,15 +5,8 @@ Du bist Vorsitzender des örtlichen Tennis-Vereins und du denkst immer wieder ü
 ### Aufgabe 1:
 Du möchtest gerne eine automatische Mitgliederkartei im Internet haben. Jedes Mitglied soll in einer Datenbank erfasst werden. Da sich alle Mitglieder mit Vornamen ansprechen, genügt es, den Vornamen, eine ID und eine E-Mail-Adresse zu erfassen. Damit soll es eine übersichtliche Liste aller Mitglieder geben und einzelne Daten sollen sich im Detail anzeigen, ändern und löschen lassen können. Neue Mitglieder können über eine Eingabe-Maske hinzugefügt werden. Die E-Mailadresse wird dabei validiert.
 
-- Jedes Mitglied soll in Datenbank erfasst werden
-    - Vorname
-    - ID
-    - Email
-- Neue Mitglieder können über Eingabe-Maske hinzugefügt werden
-- Email wird auf Gültigkeit geprüft
-
 #### Anforderungen
-1. [ ] Datenbanktabelle ```member_v1``` erstellen (Entitäten: ID, VORNAME, EMAIL)
+1. [X] Datenbanktabelle ```member``` erstellen (Entitäten: ID, VORNAME, EMAIL)
 2. [ ] Registrierung entwickeln (EMAIL (TYPE EMAIL) und VORNAME required)
 3. [ ] Daten auf HTML als Liste anzeigen lassen (ID, VORNAME, EMAIL)
 4. [ ] Daten sollen geupdated werden können
