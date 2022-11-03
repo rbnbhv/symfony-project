@@ -11,7 +11,7 @@ class ShowMemberController extends AbstractController
     #[Route('/showMember', name: 'app_show_member')]
     public function index(): Response
     {
-        return $this->render('index.html.twig', [
+        return $this->render('showMember/index.html.twig', [
             'title' => 'avengers',
         ]);
 
