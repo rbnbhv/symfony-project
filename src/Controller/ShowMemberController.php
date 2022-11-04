@@ -15,8 +15,17 @@ class ShowMemberController extends AbstractController
         $this->userRepository = $userRepository;
     }
 
-    #[Route('/memberList', name: 'app_show_member')]
+    #[Route('/', name: 'app_index')]
     public function index(): Response
+    {
+        $user = $this->userRepository->findAll();
+        return $this->render('showMember/index.html.twig', [
+            'user' => $user,
+        ]);
+    }
+
+    #[Route('/memberList', name: 'app_show_member')]
+    public function show(): Response
     {
         $user = $this->userRepository->findAll();
         return $this->render('showMember/index.html.twig', [
