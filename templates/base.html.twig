@@ -16,7 +16,7 @@
     {% endblock %}
 </head>
 <body>
-<div class="container">
+<div>
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
             <svg class="bi me-2" width="40" height="32">
@@ -37,9 +37,10 @@
     </header>
 
     <main>
-        {% block body %}{% endblock %}
+        {% block body %}
+        {% endblock %}
     </main>
-    <footer class="py-3 my-4">
+    <footer class="py-3 my-4 ">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
