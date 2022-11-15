@@ -3,9 +3,11 @@
 {% block title %}Hello ReservationController!{% endblock %}
 
 {% block body %}
-    <div>
+    <div class="container">
         <h1>Reservierungen</h1>
-
+        {% for reservation in reservations %}
+            {{ reservation.id }}
+        {% endfor %}
         <table class="table">
             <thead>
             <tr>
@@ -18,10 +20,14 @@
             <tbody>
             {% for i in 0..num_hours %}
                 <tr>
-                    <td>{{ start_date|date_modify('+' ~ i ~ ' hours')|date('d.m.Y H:i')}}
+                    <td>{{ start_date|date_modify('+' ~ i ~ ' hours')|date('d.m.Y H:i') }}
+
                         {% for court in courts %}
 
+                        {#                            {% if reservation %} #}
+
                     <th> frei</th>
+
                     {% endfor %}
                 </tr>
             {% endfor %}
