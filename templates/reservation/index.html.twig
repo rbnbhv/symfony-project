@@ -5,6 +5,9 @@
 {% block body %}
     <div class="container">
         <h1>Reservierungen</h1>
+        {% for reservation in reservations %}
+            {{ reservation.id }}
+        {% endfor %}
         <table class="table">
             <thead>
             <tr>
@@ -18,7 +21,10 @@
             {% for i in 0..num_hours %}
                 <tr>
                     <td>{{ start_date|date_modify('+' ~ i ~ ' hours')|date('d.m.Y H:i') }}
+
                         {% for court in courts %}
+
+                        {#                            {% if reservation %} #}
 
                     <th> frei</th>
 
