@@ -37,7 +37,19 @@ class ReservationRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+
     }
+
+//    public function findByDate(string $date): array
+//    {
+//        return $this->createQueryBuilder('r')
+//            ->andWhere('r.date = :date')
+//            ->setParameter('date', $date)
+//            ->orderBy('r.id', 'ASC')
+//            ->getQuery()
+//            ->getResult()
+//        ;
+//    }
 
 //    /**
 //     * @return Reservation[] Returns an array of Reservation objects
