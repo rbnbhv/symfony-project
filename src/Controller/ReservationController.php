@@ -11,6 +11,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 const TIME_START = '15:00';
 const TIME_END = '20:00';
+const DATEFORMAT_DB = 'Y-m-d H:i';
+const DATEFORMAT_FRONTEND = 'd.m.Y H:i';
 
 class ReservationController extends AbstractController
 {
@@ -30,18 +32,25 @@ class ReservationController extends AbstractController
         $begin = new DateTime('today ' . TIME_START);
         $end = new DateTime('today ' . TIME_END);
 
+        dd($reservations = $this->reservationRepository->findAll());
+        die();
+
+        //ToDo:
+        // aktuelles Datum einschränken
+//        for ($time = $begin; $time <= $end; $time->modify('+1 hour')) {
+//            $date = $time->format(DATEFORMAT_DB);
+////            var_dump($reservations->findByDate($date));
+////            die();
+//        }
+        // repository fktn für ein Datum alle Einträge ausgeben
+
+
+
         return $this->render('reservation/index.html.twig', [
             'courts' => $courts,
+            'reservations' => $reservations,
             'start_date' => $begin,
             'num_hours' => ceil(($end->format('U') - $begin->format('U')) / 3600)
-        ]);
-    }
-
-    public function get(): Response
-    {
-        $reservations = $this->reservationRepository->findAll();
-        return $this->render('reservation/index.html.twig', [
-            'reservation' => $reservations
         ]);
     }
 }
